@@ -16,8 +16,8 @@ public class AppUserService implements IAppUserSevice {
     @Autowired
     private IAppUserRepo appUserRepo;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    /*@Autowired
+    private PasswordEncoder passwordEncoder;*/
 
     @Override
     public Iterable<AppUser> findAll() {
