@@ -3,7 +3,7 @@ package com.example.demojwt.config;
 import com.example.demojwt.config.custom.CustomAccessDeniedHandler;
 import com.example.demojwt.config.custom.JwtAuthenticationFilter;
 import com.example.demojwt.config.custom.RestAuthenticationEntryPoint;
-import com.example.demojwt.service.appuser.IAppUserSevice;
+import com.example.demojwt.service.appuser.IAppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class AppSecConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private IAppUserSevice appUserSevice;
+    private IAppUserService appUserSevice;
 
     @Bean
     public JwtAuthenticationFilter jwtAuthenticationFilter() {
