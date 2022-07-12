@@ -53,8 +53,10 @@ public class AppSecConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().authenticationEntryPoint(restAuthenticationEntryPoint());
         http.authorizeRequests()
                 .antMatchers("/", "/login").permitAll()
+//                .anyRequest().authenticated()
                 .and().authorizeRequests().antMatchers("/admin**").hasAnyRole("ADMIN")
                 .and().authorizeRequests().antMatchers("/user**").hasAnyRole("USER")
+                .and().authorizeRequests().anyRequest().authenticated()
                 .and()
                 .csrf().disable();
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)

@@ -40,9 +40,14 @@ public class AuthController {
                 userDetails.getUsername(), userDetails.getAuthorities()));
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<String> hello() {
+        return new ResponseEntity<>("Hello world", HttpStatus.OK);
+    }
+
     @GetMapping("/admin")
     public ResponseEntity<String> admin() {
-        return new ResponseEntity<>("admin", HttpStatus.OK);
+        return new ResponseEntity<>("Admin", HttpStatus.OK);
     }
 
     @GetMapping("/user")
